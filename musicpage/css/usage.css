@@ -706,16 +706,6 @@
 
 }
 
-.popup {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #fff;
-  display: none;
-  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
-}
-
 .popup-content {
   display: flex;
   flex-direction: column;
@@ -739,14 +729,15 @@
 }
 
 .popup {
-  left:33%;
-  right:40%;
+  position: fixed;
+  bottom: 0;
   background-color: #fff; /* 白色弹窗背景 */
-  width: 428px;
+  width: fit-content;
   padding: 20px;
   border-radius: 10px;
   text-align: center;
   display: none;
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .popup .close {
