@@ -180,6 +180,7 @@
         );
       }
 
+      //original friends list
       let friencount = 2;
       //add new friends
       function addNewSection() {
@@ -193,10 +194,10 @@
           // confirm name
           var confirmMessage = "Send " + newName + " a freind request?";
           var isConfirmed = confirm(confirmMessage);
-          var getfriendMessage = prompt(`${newName} is your friend now!`);
+          var getfriendMessage = alert(`${newName} is your friend now!`);
 
           if (isConfirmed) {
-            if (friendMessage)
+            if (confirmMessage)
               // add name to new section
               var nameElement = section.querySelector(".name");
             if (nameElement) {
@@ -214,6 +215,7 @@
                 numberElement.textContent = (currentNumber + 1).toString();
               }
             }
+            section.addEventListener("click", remindFriend);
           }
         }
       }
