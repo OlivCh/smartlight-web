@@ -19,7 +19,7 @@
             <img class="notocloud" src="/homepage/img/noto-cloud.svg" alt="cloud" />
             <div class="greet">Good Evening</div>
           </div>
-          <div class="alarm-container">
+          <div class="alarm-container" onclick="changeColor()">
             <div class="alarm"></div>
           </div>
         </div>
@@ -51,7 +51,7 @@
               <!-- second mode -->
                 <div class="overlap-group">
                   <img class="lightbulb-solid" src="/homepage/img/lightbulb-solid-3.svg" alt="lightbulb" />
-                  <div class="mode body-text">Holiday</div>
+                  <a href="/preset2.html" style="z-index: 99999; text-decoration: none;"><div class="mode body-text">Holiday</div></a>
                 </div>
               </div>
               
@@ -61,7 +61,7 @@
                   <div class="selection-control">
                     <div class="overlap">
                       <label class="switch">
-                        <input type="checkbox" checked>
+                        <input type="checkbox">
                         <span class="slider round"></span>
                       </label>
                     </div>
@@ -71,7 +71,7 @@
                     src="/homepage/img/lightbulb-solid-6.svg"
                     alt="lightbulb"
                   />
-                  <div class="mode-1 body-text">Weekdays</div>
+                  <a href="/preset3.html" style="z-index: 99999; text-decoration: none;"><div class="mode-1 body-text">Weekdays</div></a>
                 </div>
 
                 <!-- forth mode -->
@@ -81,7 +81,7 @@
                     src="/homepage/img/lightbulb-solid-4.svg"
                     alt="lightbulb-solid 4"
                   />
-                  <div class="mode body-text">Customize</div>
+                  <a href="/preset4.html" style="z-index: 99999; text-decoration: none;"><div class="mode body-text">Customize</div></a>
                 </div>
               </div>
             </div>
@@ -99,7 +99,7 @@
             <div class="selection-control-2 selection-control-4">
               <div class="overlap">
                 <label class="switch">
-                  <input type="checkbox" checked>
+                  <input type="checkbox" >
                   <span class="slider round"></span>
                 </label>
               </div>
@@ -108,7 +108,7 @@
             <div class="selection-control-3 selection-control-4">
               <div class="overlap">
                 <label class="switch">
-                  <input type="checkbox" checked>
+                  <input type="checkbox" >
                   <span class="slider round"></span>
                 </label>
               </div>
@@ -143,8 +143,19 @@
             <a href="/friends.html"><img class="friends" src="/homepage/img/vector-2.svg" alt="friends-button" /></a>
           </div>
         </div>
-
       </div>
     </div>
+  <script>
+    function changeColor() {
+      var elements = document.getElementsByClassName("alarm-container");
+      for (var i = 0; i < elements.length; i++) {
+        if (elements[i].style.backgroundColor === "rgb(251, 188, 5)") {
+          elements[i].style.backgroundColor = "#FFFFFF";
+        } else {
+          elements[i].style.backgroundColor = "#FBBC05";
+        }
+      }
+    }
+  </script>
   </body>
 </html>
