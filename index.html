@@ -27,7 +27,7 @@
         <div class="clock-container">
           <div class="decoration"></div>
           <div class="clock-section"></div>
-          <h1 class="clock-text">00:32:10</h1>
+          <h1 class="clock-text" id="timeUntil2AM">00:32:10</h1>
           <div class="time-to-sleep">Time to sleep</div>
         </div>
 
@@ -156,6 +156,27 @@
         }
       }
     }
+
+    function updateTime() {
+        const now = new Date();
+        const targetTime = new Date(now);
+        targetTime.setHours(2);
+        targetTime.setMinutes(0);
+        targetTime.setSeconds(0);
+
+        if (now > targetTime) {
+          targetTime.setDate(targetTime.getDate() + 1);
+        }
+
+        const diff = targetTime - now; 
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('timeUntil2AM').textContent = `${hours}:${mins}:${secs}`;
+      }
+
+      setInterval(updateTime, 1000);
   </script>
   </body>
 </html>
